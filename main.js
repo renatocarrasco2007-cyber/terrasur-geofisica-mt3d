@@ -234,8 +234,8 @@
       });
     }
 
-    var amberRGB = [255, 157, 46];
-    var tealRGB = [53, 201, 193];
+    var amberRGB = [194, 87, 13];
+    var tealRGB = [13, 125, 114];
 
     function draw(t) {
       ctx.clearRect(0, 0, w, h);
@@ -243,7 +243,7 @@
         var y0 = layer.base * h;
         var grad = ctx.createLinearGradient(0, y0 - 40, 0, y0 + 60);
         var rgb = layer.hue === "amber" ? amberRGB : tealRGB;
-        var alpha = 0.10 + (idx % 3) * 0.05;
+        var alpha = 0.16 + (idx % 3) * 0.07;
         grad.addColorStop(0, "rgba(" + rgb.join(",") + "," + alpha + ")");
         grad.addColorStop(1, "rgba(" + rgb.join(",") + ",0)");
         ctx.beginPath();
@@ -260,7 +260,7 @@
       });
 
       // Faint horizontal grid ticks
-      ctx.strokeStyle = "rgba(226,236,234,0.06)";
+      ctx.strokeStyle = "rgba(22,19,13,0.06)";
       ctx.lineWidth = 1;
       for (var gy = 0; gy < h; gy += 28) {
         ctx.beginPath();
