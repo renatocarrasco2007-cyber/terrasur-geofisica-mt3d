@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto · TerraSur Geofísica</title>
+<meta name="description" content="Solicita acceso anticipado a MTSur o escríbenos con tu caso de uso. TerraSur Geofísica, Región del Biobío, Chile.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="styles.css?v=20260721b">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="es">Saltar al contenido</a>
+<a class="skip-link" href="#main" data-i18n="en">Skip to content</a>
+
+<header class="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+      <span class="brand-word">TerraSur</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html" data-i18n="es">Inicio</a>
+      <a href="index.html" data-i18n="en">Home</a>
+      <a href="software.html">Software</a>
+      <a href="actualizaciones.html">Updates</a>
+      <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+      <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Cambiar idioma / Switch language">
+        <span data-lang-es>ES</span>/<span data-lang-en>EN</span>
+      </button>
+      <a class="btn btn-primary nav-cta is-active" href="contacto.html">
+        <span data-i18n="es">Contacto</span>
+        <span data-i18n="en">Contact</span>
+      </a>
+      <label class="nav-burger" for="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="index.html" data-i18n="es">Inicio</a>
+    <a href="index.html" data-i18n="en">Home</a>
+    <a href="software.html">Software</a>
+    <a href="actualizaciones.html">Updates</a>
+    <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+    <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+    <a href="faq.html">FAQ</a>
+    <a class="btn btn-primary" href="contacto.html">
+      <span data-i18n="es">Contacto</span>
+      <span data-i18n="en">Contact</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero-compact">
+    <div class="container">
+      <p class="eyebrow"><span data-i18n="es">Solicitar acceso</span><span data-i18n="en">Request access</span></p>
+      <h1 class="h-display reveal" style="max-width:18ch;">
+        <span data-i18n="es">¿Listo para invertir tus datos MT?</span>
+        <span data-i18n="en">Ready to invert your MT data?</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container">
+      <div class="grid-2" style="gap:3rem; align-items:flex-start;">
+        <div class="reveal">
+          <p class="mono-tag" style="margin-bottom:.5rem; text-transform:uppercase; font-weight:700;">
+            <span data-i18n="es">Contacto directo</span>
+            <span data-i18n="en">Direct contact</span>
+          </p>
+          <a href="mailto:info@tsgeophysics.cl" class="contact-direct" style="font-size:1.3rem; display:inline-block; margin-bottom:1.6rem;">info@tsgeophysics.cl</a>
+          <p class="body-lg" style="font-size:1.05rem;">
+            <span data-i18n="es">Región del Biobío, Chile</span>
+            <span data-i18n="en">Biobío Region, Chile</span>
+          </p>
+          <p class="body-lg" style="font-size:1.05rem; margin-top:1.6rem;">
+            <span data-i18n="es">Estamos en fase piloto e incorporando empresas de forma progresiva. Cuéntanos tu caso de uso y te contactamos con una cotización.</span>
+            <span data-i18n="en">We're in pilot phase, onboarding companies progressively. Tell us your use case and we'll get back to you with a quote.</span>
+          </p>
+        </div>
+
+        <div class="card reveal">
+          <form data-contact-form novalidate>
+            <div class="form-row form-row-2">
+              <div class="field">
+                <label for="f-name"><span data-i18n="es">Nombre</span><span data-i18n="en">Name</span></label>
+                <input id="f-name" name="name" type="text" required autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="f-org"><span data-i18n="es">Empresa / Institución</span><span data-i18n="en">Company / Institution</span></label>
+                <input id="f-org" name="org" type="text" autocomplete="organization">
+              </div>
+            </div>
+            <div class="form-row form-row-2">
+              <div class="field">
+                <label for="f-email">Email</label>
+                <input id="f-email" name="email" type="email" required autocomplete="email">
+              </div>
+              <div class="field">
+                <label for="f-industry"><span data-i18n="es">Industria</span><span data-i18n="en">Industry</span></label>
+                <select id="f-industry" name="industry">
+                  <option data-i18n="es" value="mineria">Minería</option>
+                  <option data-i18n="en" value="mineria">Mining</option>
+                  <option data-i18n="es" value="agua">Prospección de aguas subterráneas</option>
+                  <option data-i18n="en" value="agua">Groundwater prospecting</option>
+                  <option data-i18n="es" value="geotermia">Geotermia</option>
+                  <option data-i18n="en" value="geotermia">Geothermal</option>
+                  <option data-i18n="es" value="academia">Academia</option>
+                  <option data-i18n="en" value="academia">Academic</option>
+                  <option data-i18n="es" value="otro">Otro</option>
+                  <option data-i18n="en" value="otro">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-msg"><span data-i18n="es">Cuéntanos tu caso de uso</span><span data-i18n="en">Tell us about your use case</span></label>
+              <textarea id="f-msg" name="message" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">
+              <span data-i18n="es">Enviar solicitud</span>
+              <span data-i18n="en">Send request</span>
+            </button>
+            <p class="form-note">
+              <span data-i18n="es">Al enviar, se abrirá tu cliente de correo con los datos precargados hacia info@tsgeophysics.cl.</span>
+              <span data-i18n="en">Submitting opens your email client with the details pre-filled, addressed to info@tsgeophysics.cl.</span>
+            </p>
+            <p class="form-success" data-form-success>
+              <span data-i18n="es">✓ Tu cliente de correo se abrió con la solicitud lista para enviar.</span>
+              <span data-i18n="en">✓ Your email client opened with the request ready to send.</span>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+          <span class="brand-word">TerraSur</span>
+        </a>
+        <p>
+          <span data-i18n="es">Modelamiento geofísico 3D con deep learning e inferencia Bayesiana. Región del Biobío, Chile.</span>
+          <span data-i18n="en">3D geophysical modeling with deep learning and Bayesian inference. Biobío Region, Chile.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Navegación</span><span data-i18n="en">Navigation</span></h4>
+        <a href="index.html"><span data-i18n="es">Inicio</span><span data-i18n="en">Home</span></a>
+        <a href="software.html">Software</a>
+        <a href="actualizaciones.html">Updates</a>
+        <a href="sobre-nosotros.html"><span data-i18n="es">Sobre nosotros</span><span data-i18n="en">About us</span></a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Contacto</span><span data-i18n="en">Contact</span></h4>
+        <a href="mailto:info@tsgeophysics.cl">info@tsgeophysics.cl</a>
+        <p><span data-i18n="es">Región del Biobío, Chile</span><span data-i18n="en">Biobío Region, Chile</span></p>
+        <a href="contacto.html"><span data-i18n="es">Solicitar acceso →</span><span data-i18n="en">Request access →</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TerraSur Geofísica SpA</span>
+      <span>ANID · Start Up Ciencia · SUC240150 / SUC260268</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260721b"></script>
+
+</body>
+</html>

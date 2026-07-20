@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Software MTSur — Metodología y resultados · TerraSur Geofísica</title>
+<meta name="description" content="Cómo funciona MTSur: ingesta de datos MT, inversión asistida por deep learning y cuantificación Bayesiana. Resultados validados con el dataset Díaz et al. (2015).">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="styles.css?v=20260721b">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="es">Saltar al contenido</a>
+<a class="skip-link" href="#main" data-i18n="en">Skip to content</a>
+
+<header class="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+      <span class="brand-word">TerraSur</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html" data-i18n="es">Inicio</a>
+      <a href="index.html" data-i18n="en">Home</a>
+      <a href="software.html" class="is-active">Software</a>
+      <a href="actualizaciones.html">Updates</a>
+      <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+      <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+      <a href="faq.html">FAQ</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Cambiar idioma / Switch language">
+        <span data-lang-es>ES</span>/<span data-lang-en>EN</span>
+      </button>
+      <a class="btn btn-primary nav-cta" href="contacto.html">
+        <span data-i18n="es">Contacto</span>
+        <span data-i18n="en">Contact</span>
+      </a>
+      <label class="nav-burger" for="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="index.html" data-i18n="es">Inicio</a>
+    <a href="index.html" data-i18n="en">Home</a>
+    <a href="software.html">Software</a>
+    <a href="actualizaciones.html">Updates</a>
+    <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+    <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+    <a href="faq.html">FAQ</a>
+    <a class="btn btn-primary" href="contacto.html">
+      <span data-i18n="es">Contacto</span>
+      <span data-i18n="en">Contact</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================================================
+       PAGE HERO
+       ============================================================ -->
+  <section class="page-hero-compact">
+    <div class="container">
+      <p class="eyebrow">Software · MTSur</p>
+      <h1 class="h-display reveal" style="max-width:20ch;">
+        <span data-i18n="es">Cómo funciona MTSur.</span>
+        <span data-i18n="en">How MTSur works.</span>
+      </h1>
+      <p class="body-lg reveal" style="margin-top:1.2rem;">
+        <span data-i18n="es">Una plataforma SaaS que combina deep learning e inferencia Bayesiana para reconstruir la estructura del subsuelo con menos cómputo y resultados geológicamente plausibles.</span>
+        <span data-i18n="en">A SaaS platform that combines deep learning and Bayesian inference to reconstruct subsurface structure with less compute and geologically plausible results.</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       01 — METODOLOGÍA
+       ============================================================ -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">
+          <span data-i18n="es">Metodología</span>
+          <span data-i18n="en">Methodology</span>
+        </p>
+        <h2 class="h-section">
+          <span data-i18n="es">Tres etapas entre el dato de campo y el modelo 3D.</span>
+          <span data-i18n="en">Three stages between field data and the 3D model.</span>
+        </h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:1.5rem;">
+        <div class="card reveal step-card">
+          <div class="step-num is-amber">01</div>
+          <div class="step-card-body">
+            <h3><span data-i18n="es">Ingesta de datos MT</span><span data-i18n="en">MT data ingestion</span></h3>
+            <p><span data-i18n="es">Campos eléctrico y magnético medidos en estaciones de terreno, a lo largo de múltiples periodos de sondeo.</span><span data-i18n="en">Electric and magnetic fields measured at field stations, across multiple sounding periods.</span></p>
+            <p class="mono-tag" style="margin-top:.8rem;">INPUT: E(t), H(t) · N <span data-i18n="es">estaciones</span><span data-i18n="en">stations</span> · M <span data-i18n="es">periodos</span><span data-i18n="en">periods</span></p>
+          </div>
+        </div>
+        <div class="card reveal step-card">
+          <div class="step-num is-amber">02</div>
+          <div class="step-card-body">
+            <h3><span data-i18n="es">Inversión asistida por deep learning</span><span data-i18n="en">Deep-learning–assisted inversion</span></h3>
+            <p><span data-i18n="es">Redes entrenadas aceleran la búsqueda del modelo de resistividad, reduciendo el costo computacional frente a la inversión clásica.</span><span data-i18n="en">Trained networks accelerate the search for the resistivity model, cutting compute cost versus classical inversion.</span></p>
+            <p class="mono-tag" style="margin-top:.8rem;">RTX 4090 · 20h · &gt;1M <span data-i18n="es">parámetros</span><span data-i18n="en">parameters</span></p>
+          </div>
+        </div>
+        <div class="card reveal step-card">
+          <div class="step-num is-amber">03</div>
+          <div class="step-card-body">
+            <h3><span data-i18n="es">Cuantificación Bayesiana</span><span data-i18n="en">Bayesian quantification</span></h3>
+            <p><span data-i18n="es">La inferencia Bayesiana entrega un rango de incertidumbre, no solo un modelo puntual: se sabe qué tan confiable es cada estructura recuperada.</span><span data-i18n="en">Bayesian inference yields an uncertainty range, not just a point model: you know how reliable each recovered structure is.</span></p>
+            <p class="mono-tag" style="margin-top:.8rem;">OUTPUT: <span data-i18n="es">modelo 3D + incertidumbre</span><span data-i18n="en">3D model + uncertainty</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       02 — RESULTADOS VALIDADOS
+       ============================================================ -->
+  <section class="section-pad band" id="resultados">
+    <div class="container">
+      <div class="grid-2" style="gap: 3rem; align-items:flex-start;">
+        <div class="reveal">
+          <p class="eyebrow">
+            <span data-i18n="es">Resultados validados</span>
+            <span data-i18n="en">Validated results</span>
+          </p>
+          <h2 class="h-section" style="margin-top:.6rem;">
+            <span data-i18n="es">Probado con el dataset Díaz et al. (2015).</span>
+            <span data-i18n="en">Tested with the Díaz et al. (2015) dataset.</span>
+          </h2>
+          <p class="body-lg" style="margin-top:1.2rem; font-size:1.05rem;">
+            <span data-i18n="es">Caso de prueba corrido de extremo a extremo en hardware de consumo.</span>
+            <span data-i18n="en">Test case run end-to-end on consumer hardware.</span>
+          </p>
+          <img src="assets/img/plot3d_conductive.webp" alt="Modelo 3D de resistividad recuperado por MTSur — caso Díaz et al. (2015)" style="margin-top:1.6rem; border-radius:var(--radius); box-shadow:var(--shadow-lg);" loading="lazy" decoding="async">
+        </div>
+        <div class="card reveal" style="align-self:stretch;">
+          <dl>
+            <div class="spec-row"><dt>Dataset</dt><dd>Díaz et al. (2015)</dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Estaciones</span><span data-i18n="en">Stations</span></dt><dd>30</dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Periodos</span><span data-i18n="en">Periods</span></dt><dd>18</dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Parámetros invertidos</span><span data-i18n="en">Inverted parameters</span></dt><dd><em>&gt; 1.000.000</em></dd></div>
+            <div class="spec-row"><dt>Hardware</dt><dd style="text-align:right; max-width:60%;">Ryzen 9 9950X · 64GB · RTX 4090</dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Convergencia</span><span data-i18n="en">Convergence</span></dt><dd><em>20 h</em></dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Resistividad</span><span data-i18n="en">Resistivity</span></dt><dd style="text-align:right; max-width:55%;">1–1000 Ω·m <span data-i18n="es">(↑ al este)</span><span data-i18n="en">(↑ eastward)</span></dd></div>
+            <div class="spec-row"><dt><span data-i18n="es">Cuerpos conductivos</span><span data-i18n="en">Conductive bodies</span></dt><dd style="text-align:right; max-width:55%;"><span data-i18n="es">hasta 4 km, N-NE</span><span data-i18n="en">up to 4 km, N-NE</span></dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       03 — EN DESARROLLO
+       ============================================================ -->
+  <section class="section-pad">
+    <div class="container">
+      <div class="grid-2" style="align-items:center; gap:3rem;">
+        <div class="reveal">
+          <p class="eyebrow">
+            <span data-i18n="es">En desarrollo</span>
+            <span data-i18n="en">In development</span>
+          </p>
+          <h2 class="h-section" style="margin-top:.6rem;">
+            <span data-i18n="es">El modelo actual promedia estructuras finas.</span>
+            <span data-i18n="en">The current model averages fine-scale structure.</span>
+          </h2>
+        </div>
+        <div class="roadmap-box reveal">
+          <span class="roadmap-badge">
+            <span data-i18n="es">EN PROGRESO</span>
+            <span data-i18n="en">IN PROGRESS</span>
+          </span>
+          <p class="body-lg" style="font-size:1.05rem;">
+            <span data-i18n="es">Hoy, la inversión converge en una única configuración "promedio": captura bien las estructuras grandes, pero pierde detalle geológico fino. El siguiente paso es mejorar la estrategia de muestreo para capturar distribuciones posteriores multi-modales y recuperar heterogeneidades más finas.</span>
+            <span data-i18n="en">Today, inversion collapses into a single "averaged" configuration: it captures large structures well but misses fine-scale geological detail. The next step is improving the sampling strategy to capture multi-modal posterior distributions and recover finer heterogeneities.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       04 — RUTA DE ACCESO
+       ============================================================ -->
+  <section class="section-pad band" id="ruta">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">
+          <span data-i18n="es">Ruta de acceso</span>
+          <span data-i18n="en">Access roadmap</span>
+        </p>
+        <h2 class="h-section">
+          <span data-i18n="es">De piloto manual a plataforma con precio al instante.</span>
+          <span data-i18n="en">From manual pilot to instant-pricing platform.</span>
+        </h2>
+      </div>
+
+      <div class="grid-3">
+        <div class="card reveal">
+          <div class="step-num">Q4·25</div>
+          <p class="eyebrow" style="margin-top:1.1rem; margin-bottom:.4rem;"><span data-i18n="es">Fase actual</span><span data-i18n="en">Current phase</span></p>
+          <h3 style="font-size:1.3rem; margin-bottom:.6rem;"><span data-i18n="es">Piloto</span><span data-i18n="en">Pilot</span></h3>
+          <p style="color:var(--ink-2);">
+            <span data-i18n="es">Flujo manual. Cotización directa a info@tsgeophysics.cl.</span>
+            <span data-i18n="en">Manual workflow. Direct quoting at info@tsgeophysics.cl.</span>
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="step-num is-teal">Q3·26</div>
+          <p class="eyebrow" style="margin-top:1.1rem; margin-bottom:.4rem;"><span data-i18n="es">Próximo</span><span data-i18n="en">Next</span></p>
+          <h3 style="font-size:1.3rem; margin-bottom:.6rem;"><span data-i18n="es">Beta cerrada</span><span data-i18n="en">Closed beta</span></h3>
+          <p style="color:var(--ink-2);">
+            <span data-i18n="es">Credenciales de acceso, carga y visualización de datos, seguimiento del avance.</span>
+            <span data-i18n="en">Login access, data upload and visualization, progress tracking.</span>
+          </p>
+        </div>
+        <div class="card reveal">
+          <div class="step-num is-teal">Q4·26</div>
+          <p class="eyebrow" style="margin-top:1.1rem; margin-bottom:.4rem;"><span data-i18n="es">Próximo</span><span data-i18n="en">Next</span></p>
+          <h3 style="font-size:1.3rem; margin-bottom:.6rem;"><span data-i18n="es">Lanzamiento comercial</span><span data-i18n="en">Commercial launch</span></h3>
+          <p style="color:var(--ink-2);">
+            <span data-i18n="es">Calculadora de precio dinámica. Entregas en 10–24 horas.</span>
+            <span data-i18n="en">Dynamic pricing calculator. 10–24 hour turnaround.</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="page-hero-compact">
+    <div class="container">
+      <div class="grid-2" style="align-items:center;">
+        <div class="reveal">
+          <h2 class="h-section"><span data-i18n="es">¿Listo para invertir tus datos MT?</span><span data-i18n="en">Ready to invert your MT data?</span></h2>
+        </div>
+        <div class="reveal">
+          <a class="btn btn-primary" href="contacto.html">
+            <span data-i18n="es">Solicitar acceso anticipado</span>
+            <span data-i18n="en">Request early access</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+          <span class="brand-word">TerraSur</span>
+        </a>
+        <p>
+          <span data-i18n="es">Modelamiento geofísico 3D con deep learning e inferencia Bayesiana. Región del Biobío, Chile.</span>
+          <span data-i18n="en">3D geophysical modeling with deep learning and Bayesian inference. Biobío Region, Chile.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Navegación</span><span data-i18n="en">Navigation</span></h4>
+        <a href="index.html"><span data-i18n="es">Inicio</span><span data-i18n="en">Home</span></a>
+        <a href="software.html">Software</a>
+        <a href="actualizaciones.html">Updates</a>
+        <a href="sobre-nosotros.html"><span data-i18n="es">Sobre nosotros</span><span data-i18n="en">About us</span></a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Contacto</span><span data-i18n="en">Contact</span></h4>
+        <a href="mailto:info@tsgeophysics.cl">info@tsgeophysics.cl</a>
+        <p><span data-i18n="es">Región del Biobío, Chile</span><span data-i18n="en">Biobío Region, Chile</span></p>
+        <a href="contacto.html"><span data-i18n="es">Solicitar acceso →</span><span data-i18n="en">Request access →</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TerraSur Geofísica SpA</span>
+      <span>ANID · Start Up Ciencia · SUC240150 / SUC260268</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260721b"></script>
+
+</body>
+</html>

@@ -22,8 +22,7 @@
     var nav = $(".nav");
     if (!nav) return;
     var onScroll = function () {
-      if (window.scrollY > 12) nav.style.borderBottomColor = "rgba(255,157,46,.35)";
-      else nav.style.borderBottomColor = "";
+      nav.style.boxShadow = window.scrollY > 12 ? "0 4px 16px rgba(18,16,12,.06)" : "";
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
@@ -197,88 +196,6 @@
   }
 
   /* ---------------------------------------------------------
-     Hero resistivity cross-section — ambient canvas visual.
-     A slow-drifting synthetic banding, not tied to real data,
-     purely decorative (aria-hidden in the markup).
-     --------------------------------------------------------- */
-  function initResistivityCanvas() {
-    var canvas = $("[data-resistivity-canvas]");
-    if (!canvas) return;
-    var ctx = canvas.getContext && canvas.getContext("2d");
-    if (!ctx) return;
-
-    var dpr = Math.min(window.devicePixelRatio || 1, 2);
-    var w = 0, h = 0;
-
-    function resize() {
-      var rect = canvas.parentElement.getBoundingClientRect();
-      w = Math.max(1, Math.floor(rect.width));
-      h = Math.max(1, Math.floor(rect.height));
-      canvas.width = w * dpr;
-      canvas.height = h * dpr;
-      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    }
-    resize();
-    window.addEventListener("resize", resize);
-
-    // Fixed pseudo-random layer seeds so it feels like real strata, not noise
-    var layers = [];
-    var n = 7;
-    for (var i = 0; i < n; i++) {
-      layers.push({
-        base: i / n,
-        amp: 14 + (i % 3) * 8,
-        freq: 0.006 + i * 0.0015,
-        speed: 0.00012 + i * 0.00004,
-        hue: i % 2 === 0 ? "amber" : "teal"
-      });
-    }
-
-    var amberRGB = [194, 87, 13];
-    var tealRGB = [13, 125, 114];
-
-    function draw(t) {
-      ctx.clearRect(0, 0, w, h);
-      layers.forEach(function (layer, idx) {
-        var y0 = layer.base * h;
-        var grad = ctx.createLinearGradient(0, y0 - 40, 0, y0 + 60);
-        var rgb = layer.hue === "amber" ? amberRGB : tealRGB;
-        var alpha = 0.16 + (idx % 3) * 0.07;
-        grad.addColorStop(0, "rgba(" + rgb.join(",") + "," + alpha + ")");
-        grad.addColorStop(1, "rgba(" + rgb.join(",") + ",0)");
-        ctx.beginPath();
-        ctx.moveTo(0, y0);
-        for (var x = 0; x <= w; x += 8) {
-          var yy = y0 + Math.sin(x * layer.freq + t * layer.speed + idx) * layer.amp;
-          ctx.lineTo(x, yy);
-        }
-        ctx.lineTo(w, h);
-        ctx.lineTo(0, h);
-        ctx.closePath();
-        ctx.fillStyle = grad;
-        ctx.fill();
-      });
-
-      // Faint horizontal grid ticks
-      ctx.strokeStyle = "rgba(22,19,13,0.06)";
-      ctx.lineWidth = 1;
-      for (var gy = 0; gy < h; gy += 28) {
-        ctx.beginPath();
-        ctx.moveTo(0, gy + 0.5);
-        ctx.lineTo(w, gy + 0.5);
-        ctx.stroke();
-      }
-    }
-
-    var speedFactor = reduced ? 0.25 : 1;
-    function loop(ts) {
-      draw(ts * speedFactor);
-      requestAnimationFrame(loop);
-    }
-    requestAnimationFrame(loop);
-  }
-
-  /* ---------------------------------------------------------
      Contact form — no backend, submits via mailto:
      --------------------------------------------------------- */
   function initContactForm() {
@@ -333,7 +250,6 @@
     safe(initReveals, "initReveals");
     safe(initCountUp, "initCountUp");
     safe(initFaq, "initFaq");
-    safe(initResistivityCanvas, "initResistivityCanvas");
     safe(initContactForm, "initContactForm");
     safe(initFooterYear, "initFooterYear");
 

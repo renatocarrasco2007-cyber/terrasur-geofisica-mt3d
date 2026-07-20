@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es" data-lang="es">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preguntas frecuentes · TerraSur Geofísica</title>
+<meta name="description" content="Respuestas sobre magnetotelúrica, el software MTSur, cómo funcionará el servicio, la hoja de ruta y los precios.">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
+<link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap">
+
+<link rel="stylesheet" href="styles.css?v=20260721b">
+</head>
+<body>
+
+<a class="skip-link" href="#main" data-i18n="es">Saltar al contenido</a>
+<a class="skip-link" href="#main" data-i18n="en">Skip to content</a>
+
+<header class="nav">
+  <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+      <span class="brand-word">TerraSur</span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="index.html" data-i18n="es">Inicio</a>
+      <a href="index.html" data-i18n="en">Home</a>
+      <a href="software.html">Software</a>
+      <a href="actualizaciones.html">Updates</a>
+      <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+      <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+      <a href="faq.html" class="is-active">FAQ</a>
+    </nav>
+
+    <div class="nav-right">
+      <button class="lang-toggle" data-lang-toggle type="button" aria-label="Cambiar idioma / Switch language">
+        <span data-lang-es>ES</span>/<span data-lang-en>EN</span>
+      </button>
+      <a class="btn btn-primary nav-cta" href="contacto.html">
+        <span data-i18n="es">Contacto</span>
+        <span data-i18n="en">Contact</span>
+      </a>
+      <label class="nav-burger" for="nav-toggle" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </label>
+    </div>
+  </div>
+
+  <div class="mobile-menu" data-mobile-menu>
+    <a href="index.html" data-i18n="es">Inicio</a>
+    <a href="index.html" data-i18n="en">Home</a>
+    <a href="software.html">Software</a>
+    <a href="actualizaciones.html">Updates</a>
+    <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+    <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+    <a href="faq.html">FAQ</a>
+    <a class="btn btn-primary" href="contacto.html">
+      <span data-i18n="es">Contacto</span>
+      <span data-i18n="en">Contact</span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero-compact">
+    <div class="container">
+      <p class="eyebrow">FAQ</p>
+      <h1 class="h-display reveal" style="max-width:18ch;">
+        <span data-i18n="es">Preguntas frecuentes.</span>
+        <span data-i18n="en">Frequently asked questions.</span>
+      </h1>
+    </div>
+  </section>
+
+  <section class="section-pad">
+    <div class="container-narrow">
+      <div class="faq-list" data-faq>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-i18n="es">¿Para qué se usa la magnetotelúrica (MT)?</span><span data-i18n="en">What is Magnetotellurics (MT) used for?</span></span>
+            <span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>
+              <span data-i18n="es">La magnetotelúrica es una técnica geofísica pasiva que aprovecha las variaciones naturales del campo electromagnético terrestre para mapear la conductividad eléctrica del subsuelo. Se aplica en exploración de hidrocarburos, minerales y aguas subterráneas; evaluación de recursos geotérmicos; imagenología tectónica y estructural; y monitoreo volcanológico. Puede obtener imágenes desde cientos de metros hasta decenas de kilómetros de profundidad, revelando estructuras geológicas a gran escala fuera del alcance de los métodos convencionales.</span>
+              <span data-i18n="en">Magnetotellurics is a passive geophysical technique that harnesses natural variations in the Earth's electromagnetic field to map subsurface electrical conductivity. Applications include hydrocarbon, mineral and groundwater exploration; geothermal resource assessment; tectonic and structural imaging; and volcanology monitoring. MT can image from hundreds of metres to tens of kilometres depth, revealing large-scale geological structures beyond conventional methods' reach.</span>
+            </p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-i18n="es">¿Cuáles son las principales funciones del software?</span><span data-i18n="en">What are the main features of the software?</span></span>
+            <span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>
+              <span data-i18n="es">MTSur es una plataforma SaaS en la nube para modelamiento MT 3D. Permite subir datos, solicitar corridas de modelamiento a precios cotizados, visualizar resultados en la interfaz web y descargar los resultados al instante. Las salidas incluyen parámetros del modelo, configuración de la inversión y visualizaciones de alta resolución. Entre las funciones planificadas: cobertura completa de frecuencias, mallas de más de 1 millón de celdas, modelos que consideran topografía, exploración de múltiples soluciones, entregas de 10 a 24 horas, y servicios full-service opcionales.</span>
+              <span data-i18n="en">MTSur is a cloud-based 3D MT modelling platform (SaaS). Users can upload data, request modelling runs at quoted prices, visualise results in the web interface, and download outputs instantly. Outputs include model parameters, inversion settings, and high-resolution visualisations. Planned capabilities include full frequency coverage, meshes supporting over 1 million cells, topography-aware models, multi-solution exploration, 10–24 hour turnarounds, and optional full-service offerings.</span>
+            </p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-i18n="es">¿Cómo funcionará el servicio?</span><span data-i18n="en">How will the service work?</span></span>
+            <span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>
+              <span data-i18n="es">Actualmente estamos en fase piloto con flujos de trabajo manuales; escribe a info@tsgeophysics.cl para cotizar. En las futuras fases de beta cerrada y lanzamiento comercial habrá credenciales de acceso, carga y visualización de datos, solicitud de modelamientos con precio informado por adelantado, seguimiento del avance y descarga de resultados en 10 a 24 horas.</span>
+              <span data-i18n="en">Currently in pilot phase with manual workflows; contact info@tsgeophysics.cl for quotes. Future closed-beta and commercial phases will offer login credentials, data upload and visualisation, modelling request submission with upfront pricing, progress tracking, and result downloads within 10–24 hours.</span>
+            </p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-i18n="es">¿Cuál es la hoja de ruta de lanzamiento?</span><span data-i18n="en">What's the launch roadmap?</span></span>
+            <span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>
+              <span data-i18n="es">Q4 2025 — pruebas piloto. Q3 2026 — beta cerrada. Q4 2026 — lanzamiento comercial completo.</span>
+              <span data-i18n="en">Q4 2025 — pilot testing. Q3 2026 — closed beta. Q4 2026 — full commercial launch.</span>
+            </p>
+          </div></div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button">
+            <span><span data-i18n="es">¿Cuánto costará el servicio?</span><span data-i18n="en">How much will the service cost?</span></span>
+            <span class="plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-a"><div class="faq-a-inner">
+            <p>
+              <span data-i18n="es">El precio considera el tamaño de la malla, el número de estaciones y las bandas de frecuencia, mediante una calculadora dinámica. La infraestructura acelerada por GPU permite tarifas competitivas frente a los servicios HPC tradicionales. El precio exacto se entrega en la cotización.</span>
+              <span data-i18n="en">Pricing considers mesh size, station count, and frequency bands using a dynamic calculator. GPU-accelerated infrastructure enables competitive rates versus traditional HPC services. Exact pricing is provided during quotation.</span>
+            </p>
+          </div></div>
+        </div>
+
+      </div>
+
+      <a href="contacto.html" class="btn btn-primary reveal" style="margin-top:2.8rem;">
+        <span data-i18n="es">¿Otra pregunta? Escríbenos →</span>
+        <span data-i18n="en">Another question? Get in touch →</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+          <span class="brand-word">TerraSur</span>
+        </a>
+        <p>
+          <span data-i18n="es">Modelamiento geofísico 3D con deep learning e inferencia Bayesiana. Región del Biobío, Chile.</span>
+          <span data-i18n="en">3D geophysical modeling with deep learning and Bayesian inference. Biobío Region, Chile.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Navegación</span><span data-i18n="en">Navigation</span></h4>
+        <a href="index.html"><span data-i18n="es">Inicio</span><span data-i18n="en">Home</span></a>
+        <a href="software.html">Software</a>
+        <a href="actualizaciones.html">Updates</a>
+        <a href="sobre-nosotros.html"><span data-i18n="es">Sobre nosotros</span><span data-i18n="en">About us</span></a>
+        <a href="faq.html">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4><span data-i18n="es">Contacto</span><span data-i18n="en">Contact</span></h4>
+        <a href="mailto:info@tsgeophysics.cl">info@tsgeophysics.cl</a>
+        <p><span data-i18n="es">Región del Biobío, Chile</span><span data-i18n="en">Biobío Region, Chile</span></p>
+        <a href="contacto.html"><span data-i18n="es">Solicitar acceso →</span><span data-i18n="en">Request access →</span></a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> TerraSur Geofísica SpA</span>
+      <span>ANID · Start Up Ciencia · SUC240150 / SUC260268</span>
+    </div>
+  </div>
+</footer>
+
+<script defer src="lib/manifest.js"></script>
+<script defer src="main.js?v=20260721b"></script>
+
+</body>
+</html>

@@ -9,19 +9,18 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="color-scheme" content="light">
 <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+<link rel="preload" as="image" href="assets/img/hero-model.webp" fetchpriority="high">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&display=swap">
 
-<link rel="stylesheet" href="styles.css?v=20260721">
+<link rel="stylesheet" href="styles.css?v=20260721b">
 </head>
 <body>
 
 <a class="skip-link" href="#main" data-i18n="es">Saltar al contenido</a>
 <a class="skip-link" href="#main" data-i18n="en">Skip to content</a>
-
-<div class="grain" aria-hidden="true"></div>
 
 <!-- ============================================================
      NAV
@@ -29,27 +28,28 @@
 <header class="nav">
   <input type="checkbox" id="nav-toggle" class="nav-toggle-input">
   <div class="container nav-inner">
-    <a href="#main" class="brand">
-      TerraSur<span class="brand-tag">MTSur</span>
+    <a href="index.html" class="brand">
+      <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+      <span class="brand-word">TerraSur</span>
     </a>
 
     <nav class="nav-links" aria-label="Navegación principal">
-      <a href="#tecnologia">Software</a>
-      <a href="#updates">Updates</a>
-      <a href="#sobre-nosotros" data-i18n="es">Sobre nosotros</a>
-      <a href="#sobre-nosotros" data-i18n="en">About us</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contacto" data-i18n="es">Contacto</a>
-      <a href="#contacto" data-i18n="en">Contact</a>
+      <a href="index.html" data-i18n="es" class="is-active">Inicio</a>
+      <a href="index.html" data-i18n="en" class="is-active">Home</a>
+      <a href="software.html">Software</a>
+      <a href="actualizaciones.html">Updates</a>
+      <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+      <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+      <a href="faq.html">FAQ</a>
     </nav>
 
     <div class="nav-right">
       <button class="lang-toggle" data-lang-toggle type="button" aria-label="Cambiar idioma / Switch language">
         <span data-lang-es>ES</span>/<span data-lang-en>EN</span>
       </button>
-      <a class="btn btn-primary nav-cta" href="#contacto">
-        <span data-i18n="es">Solicitar acceso</span>
-        <span data-i18n="en">Request access</span>
+      <a class="btn btn-primary nav-cta" href="contacto.html">
+        <span data-i18n="es">Contacto</span>
+        <span data-i18n="en">Contact</span>
       </a>
       <label class="nav-burger" for="nav-toggle" aria-label="Abrir menú">
         <span></span><span></span><span></span>
@@ -58,16 +58,16 @@
   </div>
 
   <div class="mobile-menu" data-mobile-menu>
-    <a href="#tecnologia">Software</a>
-    <a href="#updates">Updates</a>
-    <a href="#sobre-nosotros" data-i18n="es">Sobre nosotros</a>
-    <a href="#sobre-nosotros" data-i18n="en">About us</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contacto" data-i18n="es">Contacto</a>
-    <a href="#contacto" data-i18n="en">Contact</a>
-    <a class="btn btn-primary" href="#contacto">
-      <span data-i18n="es">Solicitar acceso</span>
-      <span data-i18n="en">Request access</span>
+    <a href="index.html" data-i18n="es">Inicio</a>
+    <a href="index.html" data-i18n="en">Home</a>
+    <a href="software.html">Software</a>
+    <a href="actualizaciones.html">Updates</a>
+    <a href="sobre-nosotros.html" data-i18n="es">Sobre nosotros</a>
+    <a href="sobre-nosotros.html" data-i18n="en">About us</a>
+    <a href="faq.html">FAQ</a>
+    <a class="btn btn-primary" href="contacto.html">
+      <span data-i18n="es">Contacto</span>
+      <span data-i18n="en">Contact</span>
     </a>
   </div>
 </header>
@@ -75,685 +75,204 @@
 <main id="main">
 
   <!-- ============================================================
-       HERO
+       HERO — real 3D resistivity model as photographic background
        ============================================================ -->
-  <section class="hero">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <p class="kicker hero-eyebrow">
-            <span data-i18n="es">TerraSur Geofísica — MTSur · Software MT 3D · TRL 5</span>
-            <span data-i18n="en">TerraSur Geophysics — MTSur · 3D MT Software · TRL 5</span>
-          </p>
+  <section class="page-hero is-tall">
+    <div class="page-hero-bg" aria-hidden="true">
+      <img src="assets/img/hero-model.webp" alt="" fetchpriority="high" loading="eager" decoding="sync">
+    </div>
+    <div class="page-hero-scrim" aria-hidden="true"></div>
+    <div class="page-hero-inner container">
+      <p class="eyebrow">
+        <span data-i18n="es">TerraSur Geofísica — MTSur · TRL 5</span>
+        <span data-i18n="en">TerraSur Geophysics — MTSur · TRL 5</span>
+      </p>
+      <h1 class="h-display reveal" data-split style="max-width:16ch;">
+        <span data-i18n="es">Inversión magnetotelúrica en horas, <em>no semanas</em>.</span>
+        <span data-i18n="en">Magnetotelluric inversion in hours, <em>not weeks</em>.</span>
+      </h1>
+      <p class="body-lg reveal" style="margin-top:1.4rem; margin-bottom:2.2rem;">
+        <span data-i18n="es"><strong style="color:#fff;">MTSur</strong> combina deep learning e inferencia Bayesiana para reconstruir la estructura del subsuelo con menos cómputo y resultados geológicamente plausibles.</span>
+        <span data-i18n="en"><strong style="color:#fff;">MTSur</strong> combines deep learning and Bayesian inference to reconstruct subsurface structure with less compute and geologically plausible results.</span>
+      </p>
+      <div class="hero-ctas reveal" style="display:flex; flex-wrap:wrap; gap:1rem;">
+        <a class="btn btn-primary" href="contacto.html">
+          <span data-i18n="es">Solicitar acceso anticipado</span>
+          <span data-i18n="en">Request early access</span>
+        </a>
+        <a class="btn btn-ghost on-dark" href="software.html">
+          <span data-i18n="es">Ver cómo funciona</span>
+          <span data-i18n="en">See how it works</span>
+        </a>
+      </div>
 
-          <h1 class="h-display hero-title reveal" data-split>
-            <span data-i18n="es">Inversión magnetotelúrica<br>en horas, <em>no semanas</em>.</span>
-            <span data-i18n="en">Magnetotelluric inversion<br>in hours, <em>not weeks</em>.</span>
-          </h1>
-
-          <p class="body-lg hero-sub reveal">
-            <span data-i18n="es"><strong style="color:var(--ink); font-weight:600;">MTSur</strong> combina deep learning e inferencia Bayesiana para reconstruir la estructura del subsuelo con menos cómputo y resultados geológicamente plausibles.</span>
-            <span data-i18n="en"><strong style="color:var(--ink); font-weight:600;">MTSur</strong> combines deep learning and Bayesian inference to reconstruct subsurface structure with less compute and geologically plausible results.</span>
-          </p>
-
-          <div class="hero-ctas reveal">
-            <a class="btn btn-primary" href="#contacto">
-              <span data-i18n="es">Solicitar acceso anticipado</span>
-              <span data-i18n="en">Request early access</span>
-            </a>
-            <a class="btn btn-ghost" href="#tecnologia">
-              <span data-i18n="es">Ver metodología ↓</span>
-              <span data-i18n="en">See methodology ↓</span>
-            </a>
-          </div>
-
-          <div class="hero-stats reveal">
-            <div class="hero-stat">
-              <span class="val" data-count-to="5">5</span>
-              <span class="lbl">TRL <span class="mono-tag">/ 9</span></span>
-            </div>
-            <div class="hero-stat">
-              <span class="val"><span data-count-to="1000000">1.000.000</span>+</span>
-              <span class="lbl" data-i18n="es">Parámetros invertidos</span>
-              <span class="lbl" data-i18n="en">Inverted parameters</span>
-            </div>
-            <div class="hero-stat">
-              <span class="val"><span data-count-to="20">20</span> h</span>
-              <span class="lbl" data-i18n="es">Convergencia</span>
-              <span class="lbl" data-i18n="en">Convergence</span>
-            </div>
-            <div class="hero-stat">
-              <span class="val"><span data-count-to="4">4</span> km</span>
-              <span class="lbl" data-i18n="es">Profundidad recuperada</span>
-              <span class="lbl" data-i18n="en">Recovered depth</span>
-            </div>
-          </div>
+      <div class="stat-strip reveal">
+        <div class="stat-tile">
+          <span class="val" data-count-to="5">5</span>
+          <span class="lbl">TRL / 9</span>
         </div>
-
-        <div class="hero-visual reveal" aria-hidden="true">
-          <canvas data-resistivity-canvas></canvas>
-          <div class="hero-visual-label">
-            <span class="teal">ρ MIN 1 Ω·m</span>
-            <span data-i18n="es">SECCIÓN SINTÉTICA</span>
-            <span data-i18n="en">SYNTHETIC SECTION</span>
-            <span class="amber">ρ MAX 1000 Ω·m</span>
-          </div>
+        <div class="stat-tile">
+          <span class="val"><span data-count-to="1000000">1.000.000</span>+</span>
+          <span class="lbl"><span data-i18n="es">Parámetros invertidos</span><span data-i18n="en">Inverted parameters</span></span>
+        </div>
+        <div class="stat-tile">
+          <span class="val"><span data-count-to="20">20</span> h</span>
+          <span class="lbl"><span data-i18n="es">Convergencia</span><span data-i18n="en">Convergence</span></span>
+        </div>
+        <div class="stat-tile">
+          <span class="val"><span data-count-to="4">4</span> km</span>
+          <span class="lbl"><span data-i18n="es">Profundidad recuperada</span><span data-i18n="en">Recovered depth</span></span>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       01 — PROBLEM / CONTEXT
+       TRUST STRIP — honest: ANID grant, not fabricated clients
        ============================================================ -->
-  <section class="section-pad band-b" id="contexto">
+  <section class="trust-strip">
+    <div class="container trust-strip-inner">
+      <span class="trust-label"><span data-i18n="es">Respaldados por</span><span data-i18n="en">Backed by</span></span>
+      <span class="trust-badge"><span class="dot" aria-hidden="true"></span> ANID · Start Up Ciencia 2026</span>
+      <span class="trust-badge"><span class="dot" aria-hidden="true"></span> SUC240150 / SUC260268</span>
+      <span class="trust-badge"><span class="dot" aria-hidden="true"></span> <span data-i18n="es">85 emprendimientos seleccionados</span><span data-i18n="en">85 startups selected</span></span>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       01 — EL PROBLEMA
+       ============================================================ -->
+  <section class="section-pad">
     <div class="container">
-      <div class="grid-12">
-        <div class="g-span-4">
-          <p class="section-num">01</p>
-          <p class="kicker">
+      <div class="grid-2" style="align-items:center; gap:3rem;">
+        <div class="reveal">
+          <p class="eyebrow">
             <span data-i18n="es">El problema</span>
             <span data-i18n="en">The problem</span>
           </p>
-        </div>
-        <div class="g-span-8">
-          <h2 class="h-section reveal">
+          <h2 class="h-section">
             <span data-i18n="es">La inversión 3D tradicional es lenta, costosa y depende de la intuición del modelador.</span>
             <span data-i18n="en">Traditional 3D inversion is slow, costly, and depends on the modeler's intuition.</span>
           </h2>
-          <p class="body-lg reveal" style="margin-top: 1.6rem;">
-            <span data-i18n="es">El objetivo es simple: acortar los tiempos de procesamiento para que las decisiones de exploración se tomen más rápido.</span>
-            <span data-i18n="en">The goal is simple: shorten processing times so exploration decisions get made faster.</span>
+        </div>
+        <div class="reveal">
+          <p class="body-lg">
+            <span data-i18n="es">Nacimos para conectar el conocimiento académico con la industria a través de soluciones de modelamiento geofísico, enfocadas en minería y prospección de aguas subterráneas. El objetivo es simple: acortar los tiempos de procesamiento para que las decisiones de exploración se tomen más rápido.</span>
+            <span data-i18n="en">We exist to connect academic knowledge to industry through geophysical-modeling solutions, focused on mining and groundwater prospecting. The goal is simple: shorten processing times so exploration decisions get made faster.</span>
           </p>
+          <a href="sobre-nosotros.html" class="contact-direct" style="display:inline-block; margin-top:1.4rem; font-weight:700;">
+            <span data-i18n="es">Conocer más sobre nosotros →</span>
+            <span data-i18n="en">Learn more about us →</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       02 — TECHNOLOGY / HOW IT WORKS
+       02 — QUÉ ES MTSUR (teaser → Software page)
        ============================================================ -->
-  <section class="section-pad band-a" id="tecnologia">
+  <section class="section-pad band">
     <div class="container">
-      <div class="section-head">
-        <p class="section-num">02</p>
-        <p class="kicker">
-          <span data-i18n="es">Cómo funciona</span>
-          <span data-i18n="en">How it works</span>
+      <div class="section-head reveal">
+        <p class="eyebrow">
+          <span data-i18n="es">Qué es MTSur</span>
+          <span data-i18n="en">What MTSur is</span>
         </p>
-        <h2 class="h-section reveal" style="margin-top:1rem; max-width:34ch;">
-          <span data-i18n="es">Tres etapas entre el dato de campo y el modelo 3D.</span>
-          <span data-i18n="en">Three stages between field data and the 3D model.</span>
+        <h2 class="h-section">
+          <span data-i18n="es">Tres etapas, un modelo 3D con incertidumbre cuantificada.</span>
+          <span data-i18n="en">Three stages, one 3D model with quantified uncertainty.</span>
         </h2>
       </div>
 
-      <div class="grid-12">
-        <div class="g-span-4 tech-block reveal">
-          <p class="tech-block-num">01</p>
-          <h3>
-            <span data-i18n="es">Ingesta de datos MT</span>
-            <span data-i18n="en">MT data ingestion</span>
-          </h3>
-          <p>
-            <span data-i18n="es">Campos eléctrico y magnético medidos en estaciones de terreno, a lo largo de múltiples periodos de sondeo.</span>
-            <span data-i18n="en">Electric and magnetic fields measured at field stations, across multiple sounding periods.</span>
-          </p>
-          <span class="mono-tag">INPUT: E(t), H(t) · N estaciones · M periodos</span>
+      <div class="grid-3">
+        <div class="card reveal step-card" style="flex-direction:column;">
+          <div class="step-num is-amber">01</div>
+          <div class="step-card-body" style="margin-top:1.2rem;">
+            <h3><span data-i18n="es">Ingesta de datos MT</span><span data-i18n="en">MT data ingestion</span></h3>
+            <p><span data-i18n="es">Campos eléctrico y magnético medidos en terreno, en múltiples periodos de sondeo.</span><span data-i18n="en">Electric and magnetic fields measured in the field, across multiple sounding periods.</span></p>
+          </div>
         </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="tech-block-num">02</p>
-          <h3>
-            <span data-i18n="es">Inversión asistida por deep learning</span>
-            <span data-i18n="en">Deep-learning–assisted inversion</span>
-          </h3>
-          <p>
-            <span data-i18n="es">Redes entrenadas aceleran la búsqueda del modelo de resistividad, reduciendo el costo computacional frente a la inversión clásica.</span>
-            <span data-i18n="en">Trained networks accelerate the search for the resistivity model, cutting compute cost versus classical inversion.</span>
-          </p>
-          <span class="mono-tag">RTX 4090 · 20h · &gt;1M parámetros</span>
+        <div class="card reveal step-card" style="flex-direction:column;">
+          <div class="step-num is-amber">02</div>
+          <div class="step-card-body" style="margin-top:1.2rem;">
+            <h3><span data-i18n="es">Inversión con deep learning</span><span data-i18n="en">Deep-learning inversion</span></h3>
+            <p><span data-i18n="es">Redes entrenadas aceleran la búsqueda del modelo de resistividad, con menos costo computacional.</span><span data-i18n="en">Trained networks accelerate the resistivity model search, at lower compute cost.</span></p>
+          </div>
         </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="tech-block-num">03</p>
-          <h3>
-            <span data-i18n="es">Cuantificación Bayesiana</span>
-            <span data-i18n="en">Bayesian quantification</span>
-          </h3>
-          <p>
-            <span data-i18n="es">La inferencia Bayesiana entrega un rango de incertidumbre, no solo un modelo puntual: se sabe qué tan confiable es cada estructura recuperada.</span>
-            <span data-i18n="en">Bayesian inference yields an uncertainty range, not just a point model: you know how reliable each recovered structure is.</span>
-          </p>
-          <span class="mono-tag">OUTPUT: modelo 3D + incertidumbre</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       03 — VALIDATED RESULTS
-       ============================================================ -->
-  <section class="section-pad band-b" id="resultados">
-    <div class="container">
-      <div class="grid-12">
-        <div class="g-span-4">
-          <p class="section-num">03</p>
-          <p class="kicker">
-            <span data-i18n="es">Resultados validados</span>
-            <span data-i18n="en">Validated results</span>
-          </p>
-          <p class="body-lg reveal" style="margin-top:1.4rem; font-size:1rem;">
-            <span data-i18n="es">Caso de prueba con el conjunto de datos de Díaz et al. (2015), corrido de extremo a extremo en hardware de consumo.</span>
-            <span data-i18n="en">Test case using the Díaz et al. (2015) dataset, run end-to-end on consumer hardware.</span>
-          </p>
-        </div>
-        <div class="g-span-8 spec-sheet reveal">
-          <dl>
-            <div class="spec-row">
-              <dt>Dataset</dt>
-              <dd>Díaz et al. (2015)</dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Estaciones</span><span data-i18n="en">Stations</span></dt>
-              <dd>30</dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Periodos</span><span data-i18n="en">Periods</span></dt>
-              <dd>18</dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Parámetros invertidos</span><span data-i18n="en">Inverted parameters</span></dt>
-              <dd><em>&gt; 1.000.000</em></dd>
-            </div>
-            <div class="spec-row">
-              <dt>Hardware</dt>
-              <dd>AMD Ryzen 9 9950X · 64GB RAM · RTX 4090</dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Tiempo de convergencia</span><span data-i18n="en">Convergence time</span></dt>
-              <dd><em>20 h</em></dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Resistividad recuperada</span><span data-i18n="en">Recovered resistivity</span></dt>
-              <dd>
-                <span data-i18n="es">1 – 1000 Ω·m, aumenta al este</span>
-                <span data-i18n="en">1 – 1000 Ω·m, increases eastward</span>
-              </dd>
-            </div>
-            <div class="spec-row">
-              <dt><span data-i18n="es">Cuerpos de alta conductividad</span><span data-i18n="en">High-conductivity bodies</span></dt>
-              <dd>
-                <span data-i18n="es">hasta 4 km de profundidad, orientación N-NE</span>
-                <span data-i18n="en">up to 4 km depth, N-NE oriented</span>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       04 — ROADMAP / TRANSPARENCY
-       ============================================================ -->
-  <section class="section-pad band-a" id="desarrollo">
-    <div class="container">
-      <div class="grid-12">
-        <div class="g-span-4">
-          <p class="section-num">04</p>
-          <p class="kicker">
-            <span data-i18n="es">En desarrollo</span>
-            <span data-i18n="en">In development</span>
-          </p>
-        </div>
-        <div class="g-span-8">
-          <div class="roadmap-box reveal">
-            <h3 style="font-size:clamp(1.2rem,2.4vw,1.6rem); margin-bottom:1rem;">
-              <span data-i18n="es">El modelo actual promedia estructuras finas. Estamos resolviendo eso.</span>
-              <span data-i18n="en">The current model averages fine-scale structure. We're solving that.</span>
-            </h3>
-            <p class="body-lg" style="font-size:1rem;">
-              <span data-i18n="es">Hoy, la inversión converge en una única configuración "promedio": captura bien las estructuras grandes, pero pierde detalle geológico fino. El siguiente paso es mejorar la estrategia de muestreo para capturar distribuciones posteriores multi-modales y recuperar heterogeneidades más finas.</span>
-              <span data-i18n="en">Today, inversion collapses into a single "averaged" configuration: it captures large structures well but misses fine-scale geological detail. The next step is improving the sampling strategy to capture multi-modal posterior distributions and recover finer heterogeneities.</span>
-            </p>
+        <div class="card reveal step-card" style="flex-direction:column;">
+          <div class="step-num is-amber">03</div>
+          <div class="step-card-body" style="margin-top:1.2rem;">
+            <h3><span data-i18n="es">Cuantificación Bayesiana</span><span data-i18n="en">Bayesian quantification</span></h3>
+            <p><span data-i18n="es">Cada modelo entrega su rango de incertidumbre, no solo un resultado puntual.</span><span data-i18n="en">Every model ships with an uncertainty range, not just a point estimate.</span></p>
           </div>
         </div>
       </div>
+
+      <a href="software.html" class="btn btn-ghost reveal" style="margin-top:2.4rem;">
+        <span data-i18n="es">Ver metodología completa y resultados →</span>
+        <span data-i18n="en">See full methodology and results →</span>
+      </a>
     </div>
   </section>
 
   <!-- ============================================================
-       05 — ACCESS ROADMAP (pilot → closed beta → commercial launch)
+       03 — UPDATES PREVIEW
        ============================================================ -->
-  <section class="section-pad band-b" id="ruta">
+  <section class="section-pad">
     <div class="container">
-      <div class="section-head">
-        <p class="section-num">05</p>
-        <p class="kicker">
-          <span data-i18n="es">Ruta de acceso</span>
-          <span data-i18n="en">Access roadmap</span>
-        </p>
-        <h2 class="h-section reveal" style="margin-top:1rem; max-width:34ch;">
-          <span data-i18n="es">De piloto manual a plataforma con precio al instante.</span>
-          <span data-i18n="en">From manual pilot to instant-pricing platform.</span>
+      <div class="section-head reveal">
+        <p class="eyebrow">Updates</p>
+        <h2 class="h-section">
+          <span data-i18n="es">Lo último de TerraSur.</span>
+          <span data-i18n="en">The latest from TerraSur.</span>
         </h2>
       </div>
 
-      <div class="grid-12">
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Fase actual</span>
-            <span data-i18n="en">Current phase</span>
-          </p>
-          <p class="tech-block-num">Q4·25</p>
-          <h3>
-            <span data-i18n="es">Piloto</span>
-            <span data-i18n="en">Pilot</span>
-          </h3>
-          <p>
-            <span data-i18n="es">Flujo de trabajo manual. Cotización directa escribiendo a info@tsgeophysics.cl.</span>
-            <span data-i18n="en">Manual workflow. Direct quoting by writing to info@tsgeophysics.cl.</span>
-          </p>
-          <span class="mono-tag" data-i18n="es">STATUS: en curso</span>
-          <span class="mono-tag" data-i18n="en">STATUS: underway</span>
-        </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Próximo</span>
-            <span data-i18n="en">Next</span>
-          </p>
-          <p class="tech-block-num">Q3·26</p>
-          <h3>
-            <span data-i18n="es">Beta cerrada</span>
-            <span data-i18n="en">Closed beta</span>
-          </h3>
-          <p>
-            <span data-i18n="es">Acceso con credenciales: carga y visualización de datos, solicitud de modelamientos y seguimiento del avance.</span>
-            <span data-i18n="en">Login access: data upload and visualization, modeling requests, and progress tracking.</span>
-          </p>
-          <span class="mono-tag" data-i18n="es">STATUS: próximamente</span>
-          <span class="mono-tag" data-i18n="en">STATUS: coming up</span>
-        </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Próximo</span>
-            <span data-i18n="en">Next</span>
-          </p>
-          <p class="tech-block-num">Q4·26</p>
-          <h3>
-            <span data-i18n="es">Lanzamiento comercial</span>
-            <span data-i18n="en">Commercial launch</span>
-          </h3>
-          <p>
-            <span data-i18n="es">Calculadora de precio dinámica según malla, estaciones y bandas de frecuencia. Entregas en 10–24 horas.</span>
-            <span data-i18n="en">Dynamic pricing calculator based on mesh, stations, and frequency bands. 10–24 hour turnaround.</span>
-          </p>
-          <span class="mono-tag" data-i18n="es">STATUS: planificado</span>
-          <span class="mono-tag" data-i18n="en">STATUS: planned</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       ANID VALIDATION STRIP
-       ============================================================ -->
-  <section class="band-a" id="validacion">
-    <div class="container">
-      <div class="anid-strip reveal">
-        <p class="anid-text">
-          <span data-i18n="es">Seleccionados entre 85 emprendimientos — Start Up Ciencia 2026 (ANID).</span>
-          <span data-i18n="en">Selected among 85 startups — Start Up Ciencia 2026 (ANID).</span>
-        </p>
-        <div class="anid-codes">
-          <span class="anid-code"><strong>SUC240150</strong> · 2024</span>
-          <span class="anid-code"><strong>SUC260268</strong> · 2026</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       06 — UPDATES
-       ============================================================ -->
-  <section class="section-pad band-b" id="updates">
-    <div class="container">
-      <div class="section-head">
-        <p class="section-num">06</p>
-        <p class="kicker">Updates</p>
-        <h2 class="h-section reveal" style="margin-top:1rem;">
-          <span data-i18n="es">Registro breve de avances.</span>
-          <span data-i18n="en">A short log of progress.</span>
-        </h2>
-      </div>
-
-      <div class="grid-12">
-        <div class="g-span-6 reveal" style="display:flex; flex-direction:column; gap:.8rem;">
-          <span class="mono-tag">23 JUN 2026 · <span data-i18n="es">2 min de lectura</span><span data-i18n="en">2 min read</span></span>
-          <h3 style="font-family:var(--display); font-size:1.2rem; color:var(--ink);">Start Up Ciencia 2026 &amp; OpenStartup G7</h3>
+      <div class="grid-2">
+        <div class="card reveal post-card">
+          <span class="post-meta">23 JUN 2026 · <span data-i18n="es">2 min de lectura</span><span data-i18n="en">2 min read</span></span>
+          <h3>Start Up Ciencia 2026 &amp; OpenStartup G7</h3>
           <p style="color:var(--ink-2);">
             <span data-i18n="es">Fuimos seleccionados entre 85 emprendimientos que recibieron el grant Start Up Ciencia 2026 (ANID).</span>
             <span data-i18n="en">We were selected among 85 startups awarded the Start Up Ciencia 2026 grant (ANID).</span>
           </p>
         </div>
-
-        <div class="g-span-6 reveal" style="display:flex; flex-direction:column; gap:.8rem;">
-          <span class="mono-tag">17 DIC 2025 · <span data-i18n="es">1 min de lectura</span><span data-i18n="en">1 min read</span></span>
-          <h3 style="font-family:var(--display); font-size:1.2rem; color:var(--ink);">Hello World</h3>
+        <div class="card reveal post-card">
+          <span class="post-meta">17 DIC 2025 · <span data-i18n="es">1 min de lectura</span><span data-i18n="en">1 min read</span></span>
+          <h3>Hello World</h3>
           <p style="color:var(--ink-2);">
             <span data-i18n="es">La primera actualización de nuestro nuevo sitio web. Esperamos que les guste.</span>
             <span data-i18n="en">The first update on our new website. We hope you like it.</span>
           </p>
         </div>
       </div>
+
+      <a href="actualizaciones.html" class="btn btn-ghost reveal" style="margin-top:2.4rem;">
+        <span data-i18n="es">Ver todas las actualizaciones →</span>
+        <span data-i18n="en">See all updates →</span>
+      </a>
     </div>
   </section>
 
   <!-- ============================================================
-       07 — ABOUT US (mission / vision / values / team)
+       CTA BAND
        ============================================================ -->
-  <section class="section-pad band-a" id="sobre-nosotros">
+  <section class="page-hero-compact">
     <div class="container">
-      <div class="section-head">
-        <p class="section-num">07</p>
-        <p class="kicker">
-          <span data-i18n="es">Sobre nosotros</span>
-          <span data-i18n="en">About us</span>
-        </p>
-        <h2 class="h-section reveal" style="margin-top:1rem; max-width:36ch;">
-          <span data-i18n="es">Ciencia chilena, aplicada a la industria.</span>
-          <span data-i18n="en">Chilean science, applied to industry.</span>
-        </h2>
-        <p class="body-lg reveal" style="margin-top:1.4rem;">
-          <span data-i18n="es">Somos una startup chilena fundada en 2024, con base en la Región del Biobío. Conectamos el conocimiento académico con la industria a través de soluciones de modelamiento geofísico para minería y prospección de aguas subterráneas.</span>
-          <span data-i18n="en">We're a Chilean startup founded in 2024, based in the Biobío Region. We connect academic knowledge to industry through geophysical-modeling solutions for mining and groundwater prospecting.</span>
-        </p>
-      </div>
-
-      <div class="grid-12" style="margin-bottom: 2px;">
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Misión</span>
-            <span data-i18n="en">Mission</span>
-          </p>
-          <p>
-            <span data-i18n="es">Desarrollar y entregar soluciones de modelamiento geofísico basadas en IA que ofrezcan resultados rápidos y confiables.</span>
-            <span data-i18n="en">Develop and deliver AI-based geophysical-modeling solutions that provide rapid, reliable results.</span>
-          </p>
-        </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Visión</span>
-            <span data-i18n="en">Vision</span>
-          </p>
-          <p>
-            <span data-i18n="es">Convertirnos en una empresa líder en modelamiento geofísico en Chile, expandiendo nuestro alcance a mercados internacionales estratégicos.</span>
-            <span data-i18n="en">Become a leading company in geophysical modeling in Chile, expanding our reach to strategic international markets.</span>
-          </p>
-        </div>
-
-        <div class="g-span-4 tech-block reveal">
-          <p class="kicker" style="margin-bottom:.8rem;">
-            <span data-i18n="es">Valores</span>
-            <span data-i18n="en">Values</span>
-          </p>
-          <p>
-            <span data-i18n="es">Calidad, adaptabilidad y creatividad.</span>
-            <span data-i18n="en">Quality, adaptability, and creativity.</span>
-          </p>
-        </div>
-      </div>
-
-      <p class="kicker reveal" style="margin-top:3rem; margin-bottom:1.4rem;">
-        <span data-i18n="es">Equipo</span>
-        <span data-i18n="en">Team</span>
-      </p>
-
-      <div class="grid-12">
-        <div class="g-span-3 team-card reveal">
-          <div class="team-mono" aria-hidden="true">VYC</div>
-          <div>
-            <p class="team-name">Vicente Yáñez Cuadra</p>
-            <p class="team-role">CEO &amp; CTO · M.Sc.</p>
-            <p class="team-spec">
-              <span data-i18n="es">Estrategia tecnológica y diseño de modelos de deep learning. Formación en procesamiento de datos geofísicos y ciencia de datos.</span>
-              <span data-i18n="en">Technology strategy and deep-learning model design. Background in geophysical data processing and data science.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="g-span-3 team-card reveal">
-          <div class="team-mono" aria-hidden="true">NKN</div>
-          <div>
-            <p class="team-name">Nicole Krumm Nualart</p>
-            <p class="team-role">CFO · M.Sc.</p>
-            <p class="team-spec">
-              <span data-i18n="es">Estrategia comercial y alianzas de ecosistema. Experiencia en minería y analítica.</span>
-              <span data-i18n="en">Commercial strategy and ecosystem partnerships. Background in mining and analytics.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="g-span-3 team-card reveal">
-          <div class="team-mono" aria-hidden="true">NDS</div>
-          <div>
-            <p class="team-name">Natalia Díaz Salazar</p>
-            <p class="team-role"><span data-i18n="es">Geofísica</span><span data-i18n="en">Geophysicist</span> · M.Sc.</p>
-            <p class="team-spec">
-              <span data-i18n="es">Modelamiento inverso, métodos Bayesianos y sismología.</span>
-              <span data-i18n="en">Inverse modeling, Bayesian methods, and seismology.</span>
-            </p>
-          </div>
-        </div>
-
-        <div class="g-span-3 team-card reveal">
-          <div class="team-mono" aria-hidden="true">KAŚ</div>
-          <div>
-            <p class="team-name">Katarzyna Anna Ślęzak</p>
-            <p class="team-role"><span data-i18n="es">Geofísica</span><span data-i18n="en">Geophysicist</span> · Ph.D.</p>
-            <p class="team-spec">
-              <span data-i18n="es">Experta en datos magnetotelúricos, con vínculos de investigación internacional.</span>
-              <span data-i18n="en">Magnetotelluric data expertise, with international research connections.</span>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       08 — FAQ
-       ============================================================ -->
-  <section class="section-pad band-b" id="faq">
-    <div class="container">
-      <div class="grid-12">
-        <div class="g-span-4">
-          <p class="section-num">08</p>
-          <p class="kicker">FAQ</p>
-        </div>
-        <div class="g-span-8">
-          <div class="faq-list" data-faq>
-
-            <div class="faq-item">
-              <button class="faq-q" type="button">
-                <span>
-                  <span data-i18n="es">¿Para qué se usa la magnetotelúrica (MT)?</span>
-                  <span data-i18n="en">What is Magnetotellurics (MT) used for?</span>
-                </span>
-                <span class="plus" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-a"><div class="faq-a-inner">
-                <p>
-                  <span data-i18n="es">La magnetotelúrica es una técnica geofísica pasiva que aprovecha las variaciones naturales del campo electromagnético terrestre para mapear la conductividad eléctrica del subsuelo. Se aplica en exploración de hidrocarburos, minerales y aguas subterráneas; evaluación de recursos geotérmicos; imagenología tectónica y estructural; y monitoreo volcanológico. Puede obtener imágenes desde cientos de metros hasta decenas de kilómetros de profundidad, revelando estructuras geológicas a gran escala fuera del alcance de los métodos convencionales.</span>
-                  <span data-i18n="en">Magnetotellurics is a passive geophysical technique that harnesses natural variations in the Earth's electromagnetic field to map subsurface electrical conductivity. Applications include hydrocarbon, mineral and groundwater exploration; geothermal resource assessment; tectonic and structural imaging; and volcanology monitoring. MT can image from hundreds of metres to tens of kilometres depth, revealing large-scale geological structures beyond conventional methods' reach.</span>
-                </p>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-q" type="button">
-                <span>
-                  <span data-i18n="es">¿Cuáles son las principales funciones del software?</span>
-                  <span data-i18n="en">What are the main features of the software?</span>
-                </span>
-                <span class="plus" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-a"><div class="faq-a-inner">
-                <p>
-                  <span data-i18n="es">MTSur es una plataforma SaaS en la nube para modelamiento MT 3D. Permite subir datos, solicitar corridas de modelamiento a precios cotizados, visualizar resultados en la interfaz web y descargar los resultados al instante. Las salidas incluyen parámetros del modelo, configuración de la inversión y visualizaciones de alta resolución. Entre las funciones planificadas: cobertura completa de frecuencias, mallas de más de 1 millón de celdas, modelos que consideran topografía, exploración de múltiples soluciones, entregas de 10 a 24 horas, y servicios full-service opcionales.</span>
-                  <span data-i18n="en">MTSur is a cloud-based 3D MT modelling platform (SaaS). Users can upload data, request modelling runs at quoted prices, visualise results in the web interface, and download outputs instantly. Outputs include model parameters, inversion settings, and high-resolution visualisations. Planned capabilities include full frequency coverage, meshes supporting over 1 million cells, topography-aware models, multi-solution exploration, 10–24 hour turnarounds, and optional full-service offerings.</span>
-                </p>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-q" type="button">
-                <span>
-                  <span data-i18n="es">¿Cómo funcionará el servicio?</span>
-                  <span data-i18n="en">How will the service work?</span>
-                </span>
-                <span class="plus" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-a"><div class="faq-a-inner">
-                <p>
-                  <span data-i18n="es">Actualmente estamos en fase piloto con flujos de trabajo manuales; escribe a info@tsgeophysics.cl para cotizar. En las futuras fases de beta cerrada y lanzamiento comercial habrá credenciales de acceso, carga y visualización de datos, solicitud de modelamientos con precio informado por adelantado, seguimiento del avance y descarga de resultados en 10 a 24 horas.</span>
-                  <span data-i18n="en">Currently in pilot phase with manual workflows; contact info@tsgeophysics.cl for quotes. Future closed-beta and commercial phases will offer login credentials, data upload and visualisation, modelling request submission with upfront pricing, progress tracking, and result downloads within 10–24 hours.</span>
-                </p>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-q" type="button">
-                <span>
-                  <span data-i18n="es">¿Cuál es la hoja de ruta de lanzamiento?</span>
-                  <span data-i18n="en">What's the launch roadmap?</span>
-                </span>
-                <span class="plus" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-a"><div class="faq-a-inner">
-                <p>
-                  <span data-i18n="es">Q4 2025 — pruebas piloto. Q3 2026 — beta cerrada. Q4 2026 — lanzamiento comercial completo.</span>
-                  <span data-i18n="en">Q4 2025 — pilot testing. Q3 2026 — closed beta. Q4 2026 — full commercial launch.</span>
-                </p>
-              </div></div>
-            </div>
-
-            <div class="faq-item">
-              <button class="faq-q" type="button">
-                <span>
-                  <span data-i18n="es">¿Cuánto costará el servicio?</span>
-                  <span data-i18n="en">How much will the service cost?</span>
-                </span>
-                <span class="plus" aria-hidden="true">+</span>
-              </button>
-              <div class="faq-a"><div class="faq-a-inner">
-                <p>
-                  <span data-i18n="es">El precio considera el tamaño de la malla, el número de estaciones y las bandas de frecuencia, mediante una calculadora dinámica. La infraestructura acelerada por GPU permite tarifas competitivas frente a los servicios HPC tradicionales. El precio exacto se entrega en la cotización.</span>
-                  <span data-i18n="en">Pricing considers mesh size, station count, and frequency bands using a dynamic calculator. GPU-accelerated infrastructure enables competitive rates versus traditional HPC services. Exact pricing is provided during quotation.</span>
-                </p>
-              </div></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================================================
-       09 — CONTACT / DEMO REQUEST
-       ============================================================ -->
-  <section class="section-pad band-a" id="contacto">
-    <div class="container">
-      <div class="grid-12">
-        <div class="g-span-4">
-          <p class="section-num">09</p>
-          <p class="kicker">
-            <span data-i18n="es">Solicitar acceso</span>
-            <span data-i18n="en">Request access</span>
-          </p>
-          <h2 class="h-section contact-head reveal" style="margin-top:1rem;">
+      <div class="grid-2" style="align-items:center;">
+        <div class="reveal">
+          <p class="eyebrow"><span data-i18n="es">Solicitar acceso</span><span data-i18n="en">Request access</span></p>
+          <h2 class="h-section">
             <span data-i18n="es">¿Listo para invertir tus datos MT?</span>
             <span data-i18n="en">Ready to invert your MT data?</span>
           </h2>
-          <div class="contact-direct">
-            <p class="mono-tag" style="margin-bottom:.5rem;">
-              <span data-i18n="es">Contacto directo</span>
-              <span data-i18n="en">Direct contact</span>
-            </p>
-            <a href="mailto:info@tsgeophysics.cl">info@tsgeophysics.cl</a>
-            <p class="mono-tag" style="margin-top:1.2rem;">
-              <span data-i18n="es">Región del Biobío, Chile</span>
-              <span data-i18n="en">Biobío Region, Chile</span>
-            </p>
-          </div>
         </div>
-
-        <div class="g-span-8 reveal">
-          <form data-contact-form novalidate>
-            <div class="form-row form-row-2">
-              <div class="field">
-                <label for="f-name">
-                  <span data-i18n="es">Nombre</span>
-                  <span data-i18n="en">Name</span>
-                </label>
-                <input id="f-name" name="name" type="text" required autocomplete="name">
-              </div>
-              <div class="field">
-                <label for="f-org">
-                  <span data-i18n="es">Empresa / Institución</span>
-                  <span data-i18n="en">Company / Institution</span>
-                </label>
-                <input id="f-org" name="org" type="text" autocomplete="organization">
-              </div>
-            </div>
-            <div class="form-row form-row-2">
-              <div class="field">
-                <label for="f-email">Email</label>
-                <input id="f-email" name="email" type="email" required autocomplete="email">
-              </div>
-              <div class="field">
-                <label for="f-industry">
-                  <span data-i18n="es">Industria</span>
-                  <span data-i18n="en">Industry</span>
-                </label>
-                <select id="f-industry" name="industry">
-                  <option data-i18n="es" value="mineria">Minería</option>
-                  <option data-i18n="en" value="mineria">Mining</option>
-                  <option data-i18n="es" value="agua">Prospección de aguas subterráneas</option>
-                  <option data-i18n="en" value="agua">Groundwater prospecting</option>
-                  <option data-i18n="es" value="geotermia">Geotermia</option>
-                  <option data-i18n="en" value="geotermia">Geothermal</option>
-                  <option data-i18n="es" value="academia">Academia</option>
-                  <option data-i18n="en" value="academia">Academic</option>
-                  <option data-i18n="es" value="otro">Otro</option>
-                  <option data-i18n="en" value="otro">Other</option>
-                </select>
-              </div>
-            </div>
-            <div class="field">
-              <label for="f-msg">
-                <span data-i18n="es">Cuéntanos tu caso de uso</span>
-                <span data-i18n="en">Tell us about your use case</span>
-              </label>
-              <textarea id="f-msg" name="message" required></textarea>
-            </div>
-            <button class="btn btn-primary" type="submit">
-              <span data-i18n="es">Enviar solicitud</span>
-              <span data-i18n="en">Send request</span>
-            </button>
-            <p class="form-note">
-              <span data-i18n="es">Al enviar, se abrirá tu cliente de correo con los datos precargados hacia info@tsgeophysics.cl.</span>
-              <span data-i18n="en">Submitting opens your email client with the details pre-filled, addressed to info@tsgeophysics.cl.</span>
-            </p>
-            <p class="form-success" data-form-success>
-              <span data-i18n="es">✓ Tu cliente de correo se abrió con la solicitud lista para enviar.</span>
-              <span data-i18n="en">✓ Your email client opened with the request ready to send.</span>
-            </p>
-          </form>
+        <div class="reveal" style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:flex-start;">
+          <a class="btn btn-primary" href="contacto.html">
+            <span data-i18n="es">Solicitar acceso anticipado</span>
+            <span data-i18n="en">Request early access</span>
+          </a>
         </div>
       </div>
     </div>
@@ -768,7 +287,10 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#main" class="brand">TerraSur<span class="brand-tag">MT-3D</span></a>
+        <a href="index.html" class="brand">
+          <img src="assets/img/logo.webp" alt="TerraSur Geofísica" width="34" height="34">
+          <span class="brand-word">TerraSur</span>
+        </a>
         <p>
           <span data-i18n="es">Modelamiento geofísico 3D con deep learning e inferencia Bayesiana. Región del Biobío, Chile.</span>
           <span data-i18n="en">3D geophysical modeling with deep learning and Bayesian inference. Biobío Region, Chile.</span>
@@ -776,15 +298,17 @@
       </div>
       <div class="footer-col">
         <h4><span data-i18n="es">Navegación</span><span data-i18n="en">Navigation</span></h4>
-        <a href="#tecnologia">Software</a>
-        <a href="#updates">Updates</a>
-        <a href="#sobre-nosotros"><span data-i18n="es">Sobre nosotros</span><span data-i18n="en">About us</span></a>
-        <a href="#faq">FAQ</a>
+        <a href="index.html"><span data-i18n="es">Inicio</span><span data-i18n="en">Home</span></a>
+        <a href="software.html">Software</a>
+        <a href="actualizaciones.html">Updates</a>
+        <a href="sobre-nosotros.html"><span data-i18n="es">Sobre nosotros</span><span data-i18n="en">About us</span></a>
+        <a href="faq.html">FAQ</a>
       </div>
       <div class="footer-col">
         <h4><span data-i18n="es">Contacto</span><span data-i18n="en">Contact</span></h4>
         <a href="mailto:info@tsgeophysics.cl">info@tsgeophysics.cl</a>
         <p><span data-i18n="es">Región del Biobío, Chile</span><span data-i18n="en">Biobío Region, Chile</span></p>
+        <a href="contacto.html"><span data-i18n="es">Solicitar acceso →</span><span data-i18n="en">Request access →</span></a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -794,11 +318,8 @@
   </div>
 </footer>
 
-<!-- ============================================================
-     SCRIPTS — classic, deferred, IIFE. No modules, no imports.
-     ============================================================ -->
 <script defer src="lib/manifest.js"></script>
-<script defer src="main.js?v=20260721"></script>
+<script defer src="main.js?v=20260721b"></script>
 
 </body>
 </html>
