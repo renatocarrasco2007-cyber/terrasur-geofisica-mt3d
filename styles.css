@@ -503,7 +503,7 @@ section { position: relative; background: var(--bg); }
 /* Reveal on scroll — only hidden when JS confirmed running (html.js set synchronously in <head>).
    Without JS, .reveal never gets opacity:0, so content is always visible. */
 html.js .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s var(--ease-out), transform .7s var(--ease-out); }
-.reveal.is-visible { opacity: 1; transform: none; }
+html.js .reveal.is-visible { opacity: 1; transform: none; }
 html.js .reveal[data-split] { opacity: 1; transform: none; } /* defensive: never leave split-text invisible */
 
 /* Depth/resistivity cursor probe */
