@@ -116,9 +116,13 @@ ul, ol { list-style: none; padding: 0; }
 .step-num.is-amber { background: var(--amber); }
 .step-num.is-teal { background: var(--teal); }
 
-[data-i18n="en"] { display: none; }
-html[data-lang="en"] [data-i18n="es"] { display: none; }
-html[data-lang="en"] [data-i18n="en"] { display: revert; }
+/* !important is deliberate here: language visibility must always win
+   over any component's own "display" rule (e.g. .mobile-menu a sets
+   display:block on every <a>, which would otherwise outrank a plain
+   attribute selector and show both language spans at once). */
+[data-i18n="en"] { display: none !important; }
+html[data-lang="en"] [data-i18n="es"] { display: none !important; }
+html[data-lang="en"] [data-i18n="en"] { display: revert !important; }
 
 /* =============================================================
    4. Typography
@@ -200,18 +204,19 @@ html[data-lang="en"] [data-i18n="en"] { display: revert; }
 .mobile-menu-backdrop.is-open { opacity: 1; pointer-events: auto; }
 
 .mobile-menu {
-  position: fixed; top: 0; right: 0; bottom: 0; z-index: 95;
-  width: min(340px, 84vw);
+  position: fixed; top: 0; right: 0; bottom: 0; left: auto; z-index: 95;
+  width: min(340px, 84vw); max-width: 340px;
   background: var(--bg);
   padding: 1.5rem clamp(1.25rem, 6vw, 2rem);
   padding-top: calc(var(--nav-h) + .5rem);
-  transform: translateX(100%);
+  margin-right: -340px;
   box-shadow: -12px 0 32px rgba(15,13,10,.16);
-  transition: transform .3s var(--ease-out);
+  transition: margin-right .3s var(--ease-out);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .nav-toggle-input:checked ~ .mobile-menu,
-.mobile-menu.is-open { transform: translateX(0); }
+.mobile-menu.is-open { margin-right: 0; }
 
 @media (max-width: 400px) {
   .brand-word { display: none; }
