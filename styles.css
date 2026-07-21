@@ -260,6 +260,7 @@ html[data-lang="en"] [data-i18n="en"] { display: revert !important; }
   display: flex; align-items: center; justify-content: center;
   font-family: var(--display); font-weight: 700; font-size: 1.3rem; color: #fff;
   background: linear-gradient(135deg, var(--amber), var(--amber-2));
+  object-fit: cover; flex-shrink: 0;
 }
 .team-name { font-family: var(--display); font-size: 1.2rem; font-weight: 700; color: var(--ink); }
 .team-role { font-weight: 700; font-size: .88rem; color: var(--amber); letter-spacing: .03em; text-transform: uppercase; }
