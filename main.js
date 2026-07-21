@@ -29,15 +29,31 @@
   }
 
   /* ---------------------------------------------------------
-     Mobile menu — checkbox already handles the toggle in pure CSS.
-     JS only closes it when a link is clicked.
+     Mobile menu — the checkbox already handles the toggle in pure
+     CSS via the :checked ~ sibling selector. This also mirrors the
+     checkbox state onto .is-open classes as a redundant rendering
+     path, in case a mobile browser's general-sibling-combinator
+     repaint lags behind a sticky + backdrop-filter ancestor. Closes
+     on link click either way.
      --------------------------------------------------------- */
-  function initMobileMenuClose() {
+  function initMobileMenu() {
     var toggle = $("#nav-toggle");
     var menu = $("[data-mobile-menu]");
+    var burger = $(".nav-burger");
     if (!toggle || !menu) return;
+
+    function sync() {
+      menu.classList.toggle("is-open", toggle.checked);
+      if (burger) burger.classList.toggle("is-open", toggle.checked);
+    }
+    toggle.addEventListener("change", sync);
+    sync();
+
     $$("a", menu).forEach(function (a) {
-      a.addEventListener("click", function () { toggle.checked = false; });
+      a.addEventListener("click", function () {
+        toggle.checked = false;
+        sync();
+      });
     });
   }
 
@@ -245,7 +261,7 @@
 
   function boot() {
     safe(initNavScroll, "initNavScroll");
-    safe(initMobileMenuClose, "initMobileMenuClose");
+    safe(initMobileMenu, "initMobileMenu");
     safe(initLangToggle, "initLangToggle");
     safe(initReveals, "initReveals");
     safe(initCountUp, "initCountUp");
