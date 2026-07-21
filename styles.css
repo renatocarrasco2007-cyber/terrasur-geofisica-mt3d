@@ -184,11 +184,11 @@ html[data-lang="en"] [data-i18n="en"] { display: revert !important; }
   flex-shrink: 0; cursor: pointer; box-sizing: border-box;
 }
 .nav-burger span { height: 2px; width: 24px; background: var(--ink); transition: transform .25s var(--ease-out), opacity .2s; flex-shrink: 0; }
-.nav-toggle-input:checked ~ .container .nav-burger span:nth-child(1),
+.nav-toggle-input:checked ~ header .nav-burger span:nth-child(1),
 .nav-burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-.nav-toggle-input:checked ~ .container .nav-burger span:nth-child(2),
+.nav-toggle-input:checked ~ header .nav-burger span:nth-child(2),
 .nav-burger.is-open span:nth-child(2) { opacity: 0; }
-.nav-toggle-input:checked ~ .container .nav-burger span:nth-child(3),
+.nav-toggle-input:checked ~ header .nav-burger span:nth-child(3),
 .nav-burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Right-side sliding drawer, with a dimmed backdrop behind it —
